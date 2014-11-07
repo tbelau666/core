@@ -69,7 +69,7 @@ abstract class AbstractMapping {
 		');
 
 		$res = $query->execute(array($search));
-		if($res === false) {
+		if($res !== false) {
 			return $query->fetchColumn();
 		}
 

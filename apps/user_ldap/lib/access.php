@@ -210,7 +210,7 @@ class Access extends LDAPUtility implements user\IUserTools {
 
 		//OID sometimes gives back DNs with whitespace after the comma
 		// a la "uid=foo, cn=bar, dn=..." We need to tackle this!
-		$dn = preg_replace('/([^\\]),(\s+)/u', '\1,', $dn);
+		$dn = preg_replace('/([^\\\]),(\s+)/u', '\1,', $dn);
 
 		//make comparisons and everything work
 		$dn = mb_strtolower($dn, 'UTF-8');
