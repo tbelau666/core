@@ -68,7 +68,12 @@ abstract class AbstractMapping {
 			WHERE `' . $compareCol . '` = ?
 		');
 
-		return $query->execute(array($search))->fetchColumn();
+		$res = $query->execute(array($search));
+		if($res === false) {
+			return $query->fetchColumn();
+		}
+
+		return false;
 	}
 
 	/**
