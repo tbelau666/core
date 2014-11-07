@@ -155,4 +155,15 @@ abstract class AbstractMapping {
 
 		return $this->dbc->insertIfNotExist($this->getTableName(), $row);
 	}
+
+	/**
+	 * Truncate's the mapping table
+	 * @return bool
+	 */
+	public function clear() {
+		$sql = $this->dbc
+			->getDatabasePlatform()
+			->getTruncateTableSQL($this->getTableName());
+		return $this->dbc->prepare($sql)->execute();
+	}
 }
