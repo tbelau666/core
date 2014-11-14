@@ -661,7 +661,7 @@ class OC_Image {
 		}
 		// create gd image
 		$im = imagecreatetruecolor($meta['width'], $meta['height']);
-		if ($im == false) {
+		if ($im === false) {
 			fclose($fh);
 			$this->logger->warning(
 				'imagecreatefrombmp: imagecreatetruecolor failed for file "' . $fileName . '" with dimensions ' . $meta['width'] . 'x' . $meta['height'],
