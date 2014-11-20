@@ -298,4 +298,11 @@ interface IServerContainer {
 	 * @return \OCP\App\IAppManager
 	 */
 	function getAppManager();
+
+	/**
+	 * Get the IniWrapper
+	 *
+	 * @return \bantu\IniGetWrapper\IniGetWrapper
+	 */
+	 function getIniWrapper();
 }
