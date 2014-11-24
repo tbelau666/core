@@ -81,3 +81,32 @@ OC_API::register(
 	'core',
 	OC_API::USER_AUTH
 );
+
+// Server-to-Server Sharing
+OC_API::register('post',
+		'/cloud/shares',
+		array('\OCA\Files\Share\API\Server2Server', 'createShare'),
+		'files_sharing',
+		OC_API::GUEST_AUTH
+);
+
+OC_API::register('post',
+		'/cloud/shares/{id}/accept',
+		array('\OCA\Files\Share\API\Server2Server', 'acceptShare'),
+		'files_sharing',
+		OC_API::GUEST_AUTH
+);
+
+OC_API::register('post',
+		'/cloud/shares/{id}/decline',
+		array('\OCA\Files\Share\API\Server2Server', 'declineShare'),
+		'files_sharing',
+		OC_API::GUEST_AUTH
+);
+
+OC_API::register('post',
+		'/cloud/shares/{id}/unshare',
+		array('\OCA\Files\Share\API\Server2Server', 'unshare'),
+		'files_sharing',
+		OC_API::GUEST_AUTH
+);
