@@ -236,10 +236,10 @@ class User extends \Test\TestCase {
 		$allConfig->expects($this->any())
 			->method('getSystemValue')
 			->with($this->equalTo('datadirectory'))
-			->will($this->returnValue('arbritary/path'));
+			->will($this->returnValue('arbitrary/path'));
 
 		$user = new \OC\User\User('foo', $backend, null, $allConfig);
-		$this->assertEquals('arbritary/path/foo', $user->getHome());
+		$this->assertEquals('arbitrary/path/foo', $user->getHome());
 	}
 
 	public function testCanChangePassword() {
